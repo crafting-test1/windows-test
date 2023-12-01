@@ -30,9 +30,6 @@ resource "aws_instance" "vm" {
   get_password_data      = true
   user_data = <<-EOT
     <powershell>
-    # Install the IIS
-    Install-WindowsFeature -name Web-Server -IncludeManagementTools
-
     # Install the OpenSSH Client
     Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
